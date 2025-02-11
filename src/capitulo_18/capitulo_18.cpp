@@ -345,10 +345,12 @@ struct Event : EventBase {
     void operator()() override { act(); }
 };
 
+// o tipo de retorno deve obedecer os requisitos dados para uma corotina.
 // a implementação de 'std::generator<>' é baseada em 'input range'.
 std::generator<int> fib() {
     int a = 0;
     int b = 1;
+    // A função deve ter pelo menos uma keyword que a caracterize como coroutina
     co_yield a;
     while (true) {
         co_yield a = std::exchange(b, a + b);
