@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11...3.31)
+cmake_minimum_required(VERSION 4.0.0)
 
 project(
     a_tour_of_c++
@@ -7,6 +7,7 @@ project(
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 23)
 
 add_executable(
     a_tour_of_c++
@@ -42,7 +43,6 @@ target_compile_options(
     -fdiagnostics-color=always
     -Wall
     -Wextra
-    -std=c++23
     -Og
     -march=native
     -fopenmp
